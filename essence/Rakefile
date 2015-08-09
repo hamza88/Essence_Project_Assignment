@@ -1,0 +1,8 @@
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+
+Cucumber::Rake::Task.new(:features, "All feature files") do |t|
+  t.profile = 'default'
+  t.cucumber_opts = "--format html --out results/all_features_report_#{Time.now.strftime("%Y%m%d_%H%M")}.html"
+end
